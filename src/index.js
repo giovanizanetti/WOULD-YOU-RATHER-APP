@@ -11,11 +11,11 @@ import middleware from './middleware'
 const store = createStore(rootReducer, middleware)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    {/* <React.StrictMode> */}
+    <App />
+    {/* </React.StrictMode> */}
+  </Provider>,
   document.getElementById('root')
 )
 

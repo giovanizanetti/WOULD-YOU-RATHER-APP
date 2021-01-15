@@ -1,6 +1,9 @@
 :root {
   --blue: #4285f4;
 }
+ul {
+  list-style: none;
+}
 .App {
   text-align: center;
   display: flex;
@@ -30,6 +33,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navBar {
+  width: 100vw;
+  display: flex;
+  height: 4rem;
+  background: #4285f4;
+  justify-content: center;
+}
+.navBar ul {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  margin: 0;
+  align-items: center;
+}
+.navItem {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #f2f2f2;
+  padding: 0.5rem;
+  background: #4285f4;
+}
+.navItem:hover {
+  /* text-decoration: underline; */
+  border-bottom: #f2f2f2 3px solid;
 }
 
 .container {
