@@ -4,11 +4,16 @@
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: #333333;
+}
 .App {
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: #333333;
 }
 
 .App-logo {
@@ -26,14 +31,14 @@ ul {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .navBar {
   width: 100vw;
@@ -43,7 +48,6 @@ ul {
   justify-content: center;
 }
 .navBar ul {
-  width: 70%;
   display: flex;
   justify-content: flex-end;
   font-size: 20px;
@@ -52,7 +56,6 @@ ul {
 }
 .navItem {
   margin: 0 1rem;
-  text-decoration: none;
   color: #f2f2f2;
   padding: 0.5rem;
   background: #4285f4;
@@ -60,6 +63,47 @@ ul {
 .navItem:hover {
   /* text-decoration: underline; */
   border-bottom: #f2f2f2 3px solid;
+}
+.mobileNav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+}
+.mobileDrawer {
+  font-size: 1.3rem;
+  background: #f2f2f2;
+  height: 100vh;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+.mobileDrawer .mobileUser {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.mobileDrawer ul {
+  margin: 0;
+  padding: 2rem 0;
+  font-weight: 500;
+}
+
+.mobileDrawer ul li {
+  margin: 0;
+  padding: 1rem;
+}
+
+.mobileDrawer ul li:hover {
+  background: #4285f4;
+  opacity: 0.9;
+}
+.mobileDrawer ul li:hover a {
+  color: #f2f2f2;
 }
 
 .container {
@@ -89,4 +133,10 @@ ul {
   border: solid 3px #4285f4;
   padding: 0.3rem;
   color: #f2f2f2;
+}
+
+@media only screen and (max-width: 920px) {
+  body {
+    background-color: lightblue;
+  }
 }
