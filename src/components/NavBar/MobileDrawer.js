@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import UserAvatar from './UserAvatar'
+import { logoutUser } from '../../actions/auth'
 
 const MobileDrawer = ({ show, setShow, authedUser }) => {
+  const dispatch = useDispatch()
   return (
     <div onClick={() => setShow(!show)} className='mobileNav' style={{ background: 'rgb(51 51 51 / .6)', zIndex: 1 }}>
       {show && (
@@ -12,12 +15,6 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
             alt='oprn menu button'
             style={{ margin: '1rem', display: 'flex', alignSelf: 'flex-end', width: 30, cursor: 'pointer' }}
           />
-          {/* <div className='mobileUser'>
-            <img src={avatarURL} style={{ width: '6rem', margin: '1rem' }} alt='user'></img>
-            <span>
-              Hello, <strong>{name}</strong>
-            </span>
-          </div> */}
           <UserAvatar className='mobileUser' authedUser={authedUser} />
           <ul>
             <li>
@@ -48,7 +45,13 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
             </li>
 
             <li>
-              <NavLink onClick={() => setShow(!show)} to='signin'>
+              <NavLink
+                onClick={() => {
+                  dispatch(logoutUser())
+                  setShow(!show)
+                }}
+                to='signin'
+              >
                 <div className='mobileLinkContainer'>
                   <div className='mobileNavIcon'></div>
                   <img src='./assets/Logout.svg' alt='logout' />

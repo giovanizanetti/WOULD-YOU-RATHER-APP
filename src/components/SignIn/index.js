@@ -57,7 +57,6 @@ const SignIn = () => {
           <h3 style={{ margin: 0, marginBottom: '.2rem' }}>Welcome to the Would You Rather Game</h3>
           <span style={{ marginTop: '.2rem' }}>Please sign in to continue</span>
         </div>
-
         <h2 className='superBold' style={{ color: '#4285f4', fontSize: 36 }}>
           Sign In
         </h2>

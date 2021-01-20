@@ -1,4 +1,4 @@
-import { SIGN_IN_USER, LOGOUT_USER } from './types'
+import { SIGN_IN_USER, LOG_OUT_USER } from './types'
 
 export const signinUser = (id) => {
   console.log('login action is working')
@@ -9,7 +9,8 @@ export const signinUser = (id) => {
 }
 
 export const logoutUser = () => {
+  console.log('logoutUser action called')
   return {
-    type: LOGOUT_USER,
+    type: LOG_OUT_USER,
   }
 }
