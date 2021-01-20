@@ -103,6 +103,22 @@ a {
   /* width: 6rem; */
   margin: 0 auto;
 }
+.mobileDrawer .mobileUser img {
+  width: 6rem;
+  margin: 1rem;
+}
+
+.desktopUser {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  color: #f2f2f2;
+  margin: 0 2rem;
+}
+.desktopUser img {
+  width: 3rem;
+  margin: 0.5rem;
+}
 
 .mobileDrawer ul {
   margin: 0;

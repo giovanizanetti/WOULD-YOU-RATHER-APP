@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import UserAvatar from './UserAvatar'
 
-const DesktopLinks = () => {
+const DesktopLinks = ({ authedUser }) => {
   return (
     <ul>
       <li>
@@ -18,7 +19,7 @@ const DesktopLinks = () => {
           Leader Board
         </NavLink>
       </li>
-      <li style={{ color: '#f2f2f2', margin: '0 4rem' }}>Hello User</li>
+      <UserAvatar authedUser={authedUser} className='desktopUser' />
       <li>
         <NavLink to='signin' className='navItem'>
           Logout

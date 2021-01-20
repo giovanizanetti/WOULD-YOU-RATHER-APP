@@ -43,7 +43,11 @@ const SignIn = () => {
 
   const handleChange = ({ value }) => {
     setSelectedValue(value)
-    dispatch(signinUser(value))
+    // dispatch(signinUser(value))
+  }
+
+  const handleSubmit = () => {
+    dispatch(signinUser(selectedValue))
   }
 
   return (
@@ -63,7 +67,12 @@ const SignIn = () => {
         <form style={{ padding: '1rem' }}>
           <Select autoFocus placeholder={placeholder} options={options} onChange={handleChange} />
           <Link to='/'>
-            <button disabled={selectedValue === placeholder ? true : false} className='btn' type='submit'>
+            <button
+              onClick={handleSubmit}
+              disabled={selectedValue === placeholder ? true : false}
+              className='btn'
+              type='submit'
+            >
               Submit
             </button>
           </Link>

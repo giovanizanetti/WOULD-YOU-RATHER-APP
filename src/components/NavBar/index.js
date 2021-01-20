@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import DesktopLinks from './DesktopLinks'
 import MobileDrawer from './MobileDrawer'
 
 const NavBar = () => {
+  const {
+    location: { pathname },
+  } = useHistory() || {}
+
   const [showDrawer, setShowDrawer] = useState(false)
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 920 ? true : false)
   const authedUser = useSelector((state) => {
     const { name, avatarURL } = state.users[state.auth.authedUser] || {}
     return { name, avatarURL }
   })
+
+  const isUserAuthed = authedUser.name !== undefined
 
   useEffect(() => {
     function handleResize() {
@@ -22,10 +29,11 @@ const NavBar = () => {
 
   return (
     <>
-      {console.log(authedUser)}
-      <MobileDrawer show={showDrawer} setShow={setShowDrawer} authedUser={authedUser} />
+      {isSmallScreen && isUserAuthed && (
+        <MobileDrawer show={showDrawer} setShow={setShowDrawer} authedUser={authedUser} />
+      )}
       <nav className='navBar' style={isSmallScreen ? { justifyContent: 'flex-end' } : null}>
-        {isSmallScreen && (
+        {isSmallScreen && isUserAuthed && (
           <img
             onClick={() => setShowDrawer(!showDrawer)}
             src='./assets/humbuguer icon.svg'
@@ -34,7 +42,7 @@ const NavBar = () => {
           />
         )}
 
-        {!isSmallScreen && <DesktopLinks />}
+        {!isSmallScreen && isUserAuthed && <DesktopLinks authedUser={authedUser} />}
       </nav>
     </>
   )
