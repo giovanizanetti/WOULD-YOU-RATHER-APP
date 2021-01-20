@@ -17,9 +17,6 @@ const SignIn = () => {
       dispatch(getUsers())
     }
   }, [dispatch, users])
-  useEffect(() => {
-    console.log(selectedValue)
-  }, [selectedValue])
 
   const options = Object.keys(users).map((id) => {
     return {
@@ -41,14 +38,9 @@ const SignIn = () => {
   })
   const placeholder = 'Select or search a user'
 
-  const handleChange = (value) => {
-    setSelectedValue({ selection: value })
+  const handleChange = ({ value }) => {
     setSelectedValue(value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(signinUser(selectedValue.selection))
+    dispatch(signinUser(value))
   }
 
   return (
@@ -65,8 +57,8 @@ const SignIn = () => {
         <div>
           <img src='./assets/signin-img.svg' style={{ width: '80%', margin: '1rem' }} alt='laptop'></img>
         </div>
-        <form style={{ padding: '1rem' }} onSubmit={handleSubmit}>
-          <Select autoFocus placeholder={placeholder} options={options} onChange={(e) => handleChange(e.value)} />
+        <form style={{ padding: '1rem' }}>
+          <Select autoFocus placeholder={placeholder} options={options} onChange={handleChange} />
           <Link to='/'>
             <button disabled={selectedValue === placeholder ? true : false} className='btn' type='submit'>
               Submit
