@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import DesktopLinks from './DesktopLinks'
 import MobileDrawer from './MobileDrawer'
+import { useScreenSize } from '../../hooks/useScreenSize'
 
 const NavBar = () => {
   const {
@@ -10,7 +11,9 @@ const NavBar = () => {
   } = useHistory() || {}
 
   const [showDrawer, setShowDrawer] = useState(false)
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 920 ? true : false)
+  // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 920 ? true : false)
+  const [isSmallScreen, setIsSmallScreen] = useScreenSize()
+
   const authedUser = useSelector((state) => {
     const { name, avatarURL } = state.users[state.auth.authedUser] || {}
     return { name, avatarURL }

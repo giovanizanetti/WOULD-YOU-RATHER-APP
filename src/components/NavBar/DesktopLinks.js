@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import UserAvatar from './UserAvatar'
+import LogOutLink from './LogOutLink'
 
 const DesktopLinks = ({ authedUser }) => {
   return (
@@ -20,11 +21,12 @@ const DesktopLinks = ({ authedUser }) => {
         </NavLink>
       </li>
       <UserAvatar authedUser={authedUser} className='desktopUser' />
-      <li>
+      {/* <li>
         <NavLink to='signin' className='navItem'>
           Logout
         </NavLink>
-      </li>
+      </li> */}
+      <LogOutLink />
     </ul>
   )
 }
