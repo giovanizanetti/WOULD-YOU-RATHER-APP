@@ -36,6 +36,7 @@ const SignIn = () => {
       color: 'pink',
     }
   })
+
   const placeholder = 'Select or search a user'
 
   const handleChange = ({ value }) => {
