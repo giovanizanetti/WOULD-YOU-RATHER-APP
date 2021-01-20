@@ -59,22 +59,24 @@ a {
   color: #f2f2f2;
   padding: 0.5rem;
   background: #4285f4;
-  webkit-transition: background-color 0.3s ease-out;
+  /* webkit-transition: background-color 0.3s ease-out;
   -moz-transition: background-color 0.3s ease-out;
   -o-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out; */
 }
 .navItem:hover {
   /* text-decoration: underline; */
   border-bottom: #f2f2f2 3px solid;
 }
 .mobileNav {
+  width: 0;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
   position: absolute;
-  z-index: 1;
   width: 100vw;
 }
+
 .mobileDrawer {
   font-size: 1.3rem;
   background: #f2f2f2;
@@ -82,13 +84,24 @@ a {
   width: 250px;
   display: flex;
   flex-direction: column;
+  transition: width 1s;
+}
+.mobileDrawerClosed {
+  font-size: 1.3rem;
+  background: #f2f2f2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .mobileDrawer .mobileUser {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
   flex-direction: column;
+  width: 6rem;
+  margin: 0 auto;
 }
 
 .mobileDrawer ul {
@@ -111,7 +124,14 @@ a {
   opacity: 0.9;
 }
 .mobileDrawer ul li:hover a {
-  color: #f2f2f2;
+}
+.mobileLinkContainer {
+  display: flex;
+  align-items: center;
+}
+.mobileLinkContainer img {
+  height: 20px;
+  margin: 0 1rem;
 }
 
 .container {
@@ -145,6 +165,5 @@ a {
 
 @media only screen and (max-width: 920px) {
   body {
-    background-color: lightblue;
   }
 }

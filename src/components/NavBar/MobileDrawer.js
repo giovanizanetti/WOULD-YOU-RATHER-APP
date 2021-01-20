@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom'
 const MobileDrawer = ({ show, setShow }) => {
   return (
-    <div className='mobileNav' style={{ background: 'rgb(51 51 51 / .6)' }}>
+    <div onClick={() => setShow(!show)} className='mobileNav' style={{ background: 'rgb(51 51 51 / .6)', zIndex: 1 }}>
       {show && (
-        <nav className='mobileDrawer'>
+        <nav onClick={(e) => e.stopPropagation()} className='mobileDrawer'>
           <img
             onClick={() => setShow(!show)}
             src='./assets/close-24px.svg'
@@ -17,22 +17,40 @@ const MobileDrawer = ({ show, setShow }) => {
           </div>
           <ul>
             <li>
-              <NavLink to='/'>
-                <div>
-                  <img src=''></img>
+              <NavLink onClick={() => setShow(!show)} to='/'>
+                <div className='mobileLinkContainer'>
+                  <img src='./assets/home.svg' alt='home'></img>
                   <span>Home</span>
                 </div>
               </NavLink>
             </li>
             <li>
-              <NavLink to='/newQuestion'>New Question</NavLink>
+              <NavLink onClick={() => setShow(!show)} to='/newQuestion'>
+                <div className='mobileLinkContainer'>
+                  <div className='mobileNavIcon'></div>
+                  <img src='./assets/NewQuestion.svg' alt='new question' />
+                  <span>New Question</span>
+                </div>
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/leaderboard'>Leader Board</NavLink>
+              <NavLink onClick={() => setShow(!show)} to='/leaderboard'>
+                <div className='mobileLinkContainer'>
+                  <div className='mobileNavIcon'></div>
+                  <img src='./assets/LeaderBoard.svg' alt='leader bord' />
+                  <span>Leader Board</span>
+                </div>
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to='signin'>Logout</NavLink>
+              <NavLink onClick={() => setShow(!show)} to='signin'>
+                <div className='mobileLinkContainer'>
+                  <div className='mobileNavIcon'></div>
+                  <img src='./assets/Logout.svg' alt='logout' />
+                  <span>Log out</span>
+                </div>
+              </NavLink>
             </li>
           </ul>
         </nav>
