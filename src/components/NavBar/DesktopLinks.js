@@ -21,11 +21,7 @@ const DesktopLinks = ({ authedUser }) => {
         </NavLink>
       </li>
       <UserAvatar authedUser={authedUser} className='desktopUser' />
-      {/* <li>
-        <NavLink to='signin' className='navItem'>
-          Logout
-        </NavLink>
-      </li> */}
+
       <LogOutLink />
     </ul>
   )
