@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import DesktopLinks from './DesktopLinks'
 import MobileDrawer from './MobileDrawer'
 import { useScreenSize } from '../../hooks/useScreenSize'
 
 const NavBar = () => {
-  const {
-    location: { pathname },
-  } = useHistory() || {}
+  // const {
+  //   location: { pathname },
+  // } = useHistory() || {}
 
   const [showDrawer, setShowDrawer] = useState(false)
   // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 920 ? true : false)
