@@ -9,7 +9,9 @@ import { _isEmpty } from '../../utils'
 
 const SignIn = () => {
   const users = useSelector((state) => state.users)
+
   const [selectedValue, setSelectedValue] = useState('Select or search a user')
+
   const dispatch = useDispatch()
 
   useEffect(() => {

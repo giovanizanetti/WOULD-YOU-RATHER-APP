@@ -6,6 +6,10 @@ import MobileDrawer from './MobileDrawer'
 const NavBar = () => {
   const [showDrawer, setShowDrawer] = useState(false)
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 920 ? true : false)
+  const authedUser = useSelector((state) => {
+    const { name, avatarURL } = state.users[state.auth.authedUser] || {}
+    return { name, avatarURL }
+  })
 
   useEffect(() => {
     function handleResize() {
@@ -18,7 +22,8 @@ const NavBar = () => {
 
   return (
     <>
-      <MobileDrawer show={showDrawer} setShow={setShowDrawer} />
+      {console.log(authedUser)}
+      <MobileDrawer show={showDrawer} setShow={setShowDrawer} authedUser={authedUser} />
       <nav className='navBar' style={isSmallScreen ? { justifyContent: 'flex-end' } : null}>
         {isSmallScreen && (
           <img

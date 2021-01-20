@@ -1,19 +1,20 @@
 import { NavLink } from 'react-router-dom'
-const MobileDrawer = ({ show, setShow }) => {
+const MobileDrawer = ({ show, setShow, authedUser: { name, avatarURL } }) => {
   return (
     <div onClick={() => setShow(!show)} className='mobileNav' style={{ background: 'rgb(51 51 51 / .6)', zIndex: 1 }}>
       {show && (
         <nav onClick={(e) => e.stopPropagation()} className='mobileDrawer'>
           <img
             onClick={() => setShow(!show)}
-            src='./assets/close-24px.svg'
+            src={'./assets/close-24px.svg'}
             alt='oprn menu button'
             style={{ margin: '1rem', display: 'flex', alignSelf: 'flex-end', width: 30, cursor: 'pointer' }}
           />
           <div className='mobileUser'>
-            <img src='./assets/avata-m-1.svg' style={{ width: '6rem', margin: '1rem' }} alt='user'></img>
-
-            <span>Hello User</span>
+            <img src={avatarURL} style={{ width: '6rem', margin: '1rem' }} alt='user'></img>
+            <span>
+              Hello, <strong>{name}</strong>
+            </span>
           </div>
           <ul>
             <li>

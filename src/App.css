@@ -100,7 +100,7 @@ a {
   align-items: center;
   padding: 1rem;
   flex-direction: column;
-  width: 6rem;
+  /* width: 6rem; */
   margin: 0 auto;
 }
 
