@@ -8,13 +8,13 @@ import Home from './components/Home'
 import LeaderBoard from './components/LeaderBoard'
 import NewQuestion from './components/NewQuestion'
 
-const App = () => {
+const App = (props) => {
   const authedUser = useSelector((state) => {
     const { name } = state.users[state.auth.authedUser] || {}
     return name
   })
 
-  const isAuthenticated = authedUser === undefined && <Redirect to='/signin' />
+  const isAuthenticated = authedUser === undefined && <Redirect to='signin' />
 
   return (
     <>
