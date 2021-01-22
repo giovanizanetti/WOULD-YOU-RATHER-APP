@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import DesktopLinks from './DesktopLinks'
 import MobileDrawer from './MobileDrawer'
@@ -13,24 +13,15 @@ const NavBar = () => {
     return { name, avatarURL }
   })
 
-  const isUserAuthed = authedUser.name !== undefined
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     if (window.innerWidth < 920) {
-  //       setIsSmallScreen(true)
-  //     } else setIsSmallScreen(false)
-  //   }
-  //   window.addEventListener('resize', handleResize)
-  // }, [isSmallScreen])
+  const isAuthenticated = authedUser.name !== undefined
 
   return (
     <>
-      {isSmallScreen && isUserAuthed && (
+      {isSmallScreen && isAuthenticated && (
         <MobileDrawer show={showDrawer} setShow={setShowDrawer} authedUser={authedUser} />
       )}
       <nav className='navBar' style={isSmallScreen ? { justifyContent: 'flex-end' } : null}>
-        {isSmallScreen && isUserAuthed && (
+        {isSmallScreen && isAuthenticated && (
           <img
             onClick={() => setShowDrawer(!showDrawer)}
             src='./assets/humbuguer icon.svg'
@@ -39,7 +30,7 @@ const NavBar = () => {
           />
         )}
 
-        {!isSmallScreen && isUserAuthed && <DesktopLinks authedUser={authedUser} />}
+        {!isSmallScreen && isAuthenticated && <DesktopLinks authedUser={authedUser} />}
       </nav>
     </>
   )

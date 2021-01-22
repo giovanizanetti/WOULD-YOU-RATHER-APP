@@ -1,13 +1,21 @@
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import './App.css'
 import SignIn from './components/SignIn'
 import LoadingBar from 'react-redux-loading'
 import NavBar from './components/NavBar'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import LeaderBoard from './components/LeaderBoard'
 import NewQuestion from './components/NewQuestion'
 
-function App() {
+const App = () => {
+  const authedUser = useSelector((state) => {
+    const { name } = state.users[state.auth.authedUser] || {}
+    return name
+  })
+
+  const isAuthenticated = authedUser === undefined && <Redirect to='/signin' />
+
   return (
     <>
       <Router>
@@ -15,12 +23,16 @@ function App() {
         <LoadingBar />
         <div className='App'>
           <Route path='/' exact>
+            {isAuthenticated}
             <Home />
           </Route>
           <Route path='/leaderboard' exact>
+            {isAuthenticated}
             <LeaderBoard />
           </Route>
           <Route path='/newQuestion' exact>
+            {isAuthenticated}
+
             <NewQuestion />
           </Route>
           <Route path='/signin' exact>

@@ -53,8 +53,10 @@ a {
   font-size: 20px;
   margin: 0;
   align-items: center;
+  padding: 0;
 }
 .navItem {
+  font-size: 1.1rem;
   margin: 0 1rem;
   color: #f2f2f2;
   padding: 0.5rem;
@@ -113,7 +115,7 @@ a {
   /* flex-direction: row; */
   align-items: center;
   color: #f2f2f2;
-  margin: 0 2rem;
+  margin: 0 3rem;
 }
 .desktopUser img {
   width: 3rem;
