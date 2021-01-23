@@ -32,7 +32,6 @@ const App = (props) => {
           </Route>
           <Route path='/newQuestion' exact>
             {isAuthenticated}
-
             <NewQuestion />
           </Route>
           <Route path='/signin' exact>

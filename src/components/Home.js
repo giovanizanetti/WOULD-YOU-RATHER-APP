@@ -17,7 +17,7 @@ const Home = () => {
           Unanswered
         </div>
       </nav>
-      <QuestionsList />
+      <QuestionsList activeList={active} />
     </div>
   )
 }

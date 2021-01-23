@@ -1,6 +1,6 @@
 const QuestionListItem = () => {
   return (
-    <>
+    <div className='container border-gray'>
       <div className='container-header question-card-header border-gray'>Paulinho Asks:</div>
       <div className='question-card-outer flex-row pad-TB-1'>
         <img className='question-card-avatar' src='./assets/avata-m-1.svg' alt='user avatar' />
@@ -10,7 +10,7 @@ const QuestionListItem = () => {
           <button className='btn btn-transparent'>View poll</button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
