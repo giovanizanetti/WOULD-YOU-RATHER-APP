@@ -9,12 +9,10 @@ const QuestionsList = ({ activeList }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // if (_isEmpty(questions)) {
-    dispatch(getQuestions())
-    // }
-  }, [dispatch])
-
-  // }, [dispatch, questions])
+    if (_isEmpty(questions)) {
+      dispatch(getQuestions())
+    }
+  }, [dispatch, questions])
 
   return (
     <div>
