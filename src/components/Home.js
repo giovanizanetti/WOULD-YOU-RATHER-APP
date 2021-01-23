@@ -1,12 +1,19 @@
+import { useState } from 'react'
+
 const Home = () => {
+  const answered = 'ansered'
+  const unanswered = 'unansered'
+  const [active, setAtive] = useState(answered)
+  const handleClick = (e) => setAtive(e.target.id)
+
   return (
     <div className='container border-gray'>
       <nav className='questions-container-nav'>
-        <div>
-          <span>Answered</span>
+        <div className={active === answered ? 'questions-active' : undefined} id={answered} onClick={handleClick}>
+          Answered
         </div>
-        <div>
-          <span>Unanswered</span>
+        <div className={active === unanswered ? 'questions-active' : undefined} id={unanswered} onClick={handleClick}>
+          Unanswered
         </div>
       </nav>
       <div className='container border-gray'>

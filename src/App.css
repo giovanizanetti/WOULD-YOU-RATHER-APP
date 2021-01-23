@@ -209,11 +209,14 @@ a {
 }
 
 .questions-container-nav div {
-  background: rgba(196, 196, 196, 0.5);
   /* height: 100%; */
   width: -webkit-fill-available;
   padding: 0.6rem;
-  z-index: -1;
+  /* z-index: -1; */
+  cursor: pointer;
+}
+.questions-active {
+  background: #c4c4c4cc;
 }
 .questions-container-nav div:first-child {
   border-right: #a8a6a6 solid 3px;
