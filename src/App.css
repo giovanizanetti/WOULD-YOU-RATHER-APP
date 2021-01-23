@@ -60,6 +60,7 @@ a {
   height: 4rem;
   background: #4285f4;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 .navBar ul {
   display: flex;

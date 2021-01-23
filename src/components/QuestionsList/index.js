@@ -7,6 +7,7 @@ import { _isEmpty } from '../../utils'
 const QuestionsList = ({ activeList }) => {
   const questions = useSelector((state) => state.questions)
   const dispatch = useDispatch()
+  const questionsIDs = Object.keys(questions).map((question) => question)
 
   useEffect(() => {
     if (_isEmpty(questions)) {
@@ -15,10 +16,8 @@ const QuestionsList = ({ activeList }) => {
   }, [dispatch, questions])
 
   return (
-    <div>
-      <QuestionListItem />
-      <QuestionListItem />
-      <QuestionListItem />
+    <div style={{ overflowY: 'auto' }}>
+      {questionsIDs && questionsIDs.map((id) => <QuestionListItem questionId={id} />)}
     </div>
   )
 }

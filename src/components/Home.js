@@ -8,7 +8,7 @@ const Home = () => {
   const handleClick = (e) => setAtive(e.target.id)
 
   return (
-    <div className='container border-gray' style={{ overflow: 'hidden' }}>
+    <div className='container border-gray' style={{ overflow: 'hidden', position: 'fixed', maxHeight: '80vh' }}>
       <nav className='questions-container-nav'>
         <div className={active === answered ? 'questions-active' : undefined} id={answered} onClick={handleClick}>
           Answered
