@@ -1,12 +1,16 @@
 const Home = () => {
   return (
-    <div className='container'>
-      <nav>
-        <span>Answered</span>
-        <span>Unanswered</span>
+    <div className='container border-gray'>
+      <nav className='questions-container-nav'>
+        <div>
+          <span>Answered</span>
+        </div>
+        <div>
+          <span>Unanswered</span>
+        </div>
       </nav>
-      <div className='container'>
-        <div className='container-header question-card-header'>Paulinho Asks:</div>
+      <div className='container border-gray'>
+        <div className='container-header question-card-header border-gray'>Paulinho Asks:</div>
         <div className='question-card-outer flex-row pad-TB-1'>
           <img className='question-card-avatar' src='./assets/avata-m-1.svg' alt='user avatar' />
           <div className='flex-column question-card-inner'>
