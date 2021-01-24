@@ -1,8 +1,12 @@
+import tylermcginnisAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avata-m-1.svg'
+import sarahedoAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avatar-f-1.svg'
+import johndoeAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avatar-m-2.svg'
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: './assets/avatar-f-1.svg',
+    avatarURL: sarahedoAvatar,
     answers: {
       '8xf0y6ziyjabvozdd253nd': 'optionOne',
       '6ni6ok3ym7mf1p33lnez': 'optionTwo',
@@ -14,7 +18,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: './assets/avata-m-1.svg',
+    avatarURL: tylermcginnisAvatar,
     answers: {
       vthrdm985a262al8qx3do: 'optionOne',
       xj352vofupe1dqz9emx13r: 'optionTwo',
@@ -24,7 +28,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: './assets/avatar-m-2.svg',
+    avatarURL: johndoeAvatar,
     answers: {
       xj352vofupe1dqz9emx13r: 'optionOne',
       vthrdm985a262al8qx3do: 'optionTwo',

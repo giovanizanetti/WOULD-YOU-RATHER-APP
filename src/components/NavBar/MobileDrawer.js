@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import UserAvatar from './UserAvatar'
 import LogOutLink from './LogOutLink'
+import Home from '../../assets/home.svg'
 
 const MobileDrawer = ({ show, setShow, authedUser }) => {
   return (
@@ -20,7 +21,7 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
             <li>
               <NavLink onClick={() => setShow(!show)} to='/'>
                 <div className='mobileLinkContainer'>
-                  {setShow !== undefined && <img src='./assets/home.svg' alt='home'></img>}
+                  {setShow !== undefined && <img src={Home} alt='home'></img>}
                   <span>Home</span>
                 </div>
               </NavLink>

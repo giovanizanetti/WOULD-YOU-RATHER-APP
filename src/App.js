@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import LeaderBoard from './components/LeaderBoard'
 import NewQuestion from './components/NewQuestion'
+import QuestionDetails from './components/QuestionDetails'
 
 const App = (props) => {
   const authedUser = useSelector((state) => {
@@ -14,7 +15,7 @@ const App = (props) => {
     return name
   })
 
-  const isAuthenticated = authedUser === undefined && <Redirect to='signin' />
+  const isAuthenticated = authedUser === undefined && <Redirect to='/signin' />
 
   return (
     <>
@@ -26,6 +27,11 @@ const App = (props) => {
             {isAuthenticated}
             <Home />
           </Route>
+          <Route path='/questions/:id'>
+            {isAuthenticated}
+            <QuestionDetails />
+          </Route>
+
           <Route path='/leaderboard' exact>
             {isAuthenticated}
             <LeaderBoard />
