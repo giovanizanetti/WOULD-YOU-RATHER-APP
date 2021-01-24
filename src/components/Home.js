@@ -9,15 +9,15 @@ const Home = () => {
 
   return (
     <div
-      className='container border-gray'
+      className='container border-gray questions-container'
       style={{ overflow: 'hidden', position: 'fixed', maxHeight: '80vh', minHeight: '40vh' }}
     >
       <nav className='questions-container-nav'>
         <div className={active === answered ? 'questions-active' : undefined} id={answered} onClick={handleClick}>
-          answered
+          Answered
         </div>
         <div className={active === unAnswered ? 'questions-active' : undefined} id={unAnswered} onClick={handleClick}>
-          UnAnswered
+          Unanswered
         </div>
       </nav>
       <QuestionsList activeList={active} />
