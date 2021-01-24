@@ -4,7 +4,7 @@ import QuestionsList from './QuestionsList'
 const Home = () => {
   const answered = 'answered'
   const unAnswered = 'unanswered'
-  const [active, setAtive] = useState(answered)
+  const [active, setAtive] = useState(unAnswered)
   const handleClick = (e) => setAtive(e.target.id)
 
   return (
