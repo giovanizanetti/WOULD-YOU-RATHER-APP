@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getUsers } from '../../actions/users'
 import { signinUser } from '../../actions/auth'
+import SingInImg from '../../assets//signin-img.svg'
 
 import Select from 'react-select'
 import { _isEmpty } from '../../utils'
@@ -58,7 +59,7 @@ const SignIn = () => {
           Sign In
         </h2>
         <div>
-          <img src='./assets/signin-img.svg' style={{ width: '80%', margin: '1rem' }} alt='laptop'></img>
+          <img src={SingInImg} style={{ width: '80%', margin: '1rem' }} alt='laptop'></img>
         </div>
         <form style={{ padding: '1rem' }}>
           <Select autoFocus placeholder={placeholder} options={options} onChange={handleChange} />

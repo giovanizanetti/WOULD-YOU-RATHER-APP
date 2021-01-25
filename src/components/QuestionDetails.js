@@ -7,9 +7,10 @@ const QuestionDetails = () => {
   const { id } = useParams()
   const { author, optionOne, optionTwo } = useSelector((state) => state.questions[id]) || {}
   const { name, avatarURL } = useSelector((state) => state.users[author]) || {}
+  const headerText = `Asked by ${name}`
 
   return (
-    <Card name={name} avatar={avatarURL}>
+    <Card name={name} avatar={avatarURL} headerText={headerText}>
       <div>QuestionDetails</div>
     </Card>
   )
