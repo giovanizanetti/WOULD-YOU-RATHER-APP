@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { _capitalize } from '../utils'
-
 import Card from './utils/Card'
 import QuestionResult from './utils/QuestionResult'
 
@@ -14,7 +12,7 @@ const QuestionDetails = () => {
   const question1 = {
     votes: votesOption1,
     text: optionOne.text,
-    isWinner: isOption1Winner.valueOf,
+    isWinner: isOption1Winner,
     isEven: votesOption2 === votesOption1,
   }
   const question2 = {

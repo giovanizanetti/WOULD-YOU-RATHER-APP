@@ -2,6 +2,9 @@ import { NavLink } from 'react-router-dom'
 import UserAvatar from './UserAvatar'
 import LogOutLink from './LogOutLink'
 import Home from '../../assets/home.svg'
+import CloseIcon from '../../assets/close-24px.svg'
+import NewQuestionIcon from '../../assets/NewQuestion.svg'
+import LeaderBoardIcon from '../../assets/LeaderBoard.svg'
 
 const MobileDrawer = ({ show, setShow, authedUser }) => {
   return (
@@ -10,8 +13,8 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
         <nav onClick={(e) => e.stopPropagation()} className='mobileDrawer'>
           <img
             onClick={() => setShow(!show)}
-            src={'./assets/close-24px.svg'}
-            alt='oprn menu button'
+            src={CloseIcon}
+            alt='close menu'
             style={{ margin: '1rem', display: 'flex', alignSelf: 'flex-end', width: 30, cursor: 'pointer' }}
           />
 
@@ -31,7 +34,7 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
               <NavLink onClick={() => setShow(!show)} to='/newQuestion'>
                 <div className='mobileLinkContainer'>
                   <div className='mobileNavIcon'></div>
-                  <img src='./assets/NewQuestion.svg' alt='new question' />
+                  <img src={NewQuestionIcon} alt='new question' />
                   <span>New Question</span>
                 </div>
               </NavLink>
@@ -41,7 +44,7 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
               <NavLink onClick={() => setShow(!show)} to='/leaderboard'>
                 <div className='mobileLinkContainer'>
                   <div className='mobileNavIcon'></div>
-                  <img src='./assets/LeaderBoard.svg' alt='leader bord' />
+                  <img src={LeaderBoardIcon} alt='leader bord' />
                   <span>Leader Board</span>
                 </div>
               </NavLink>

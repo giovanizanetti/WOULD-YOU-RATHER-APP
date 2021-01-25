@@ -258,6 +258,10 @@ p {
   margin: 1rem 0 0 0;
   font-weight: 600;
 }
+.question-results-container {
+  min-width: 15rem;
+  max-width: 20rem;
+}
 .question-results-container h3 {
   text-align: left;
   font-weight: 600;

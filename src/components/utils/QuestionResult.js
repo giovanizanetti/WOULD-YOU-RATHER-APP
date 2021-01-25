@@ -3,8 +3,6 @@ import ProgressBar from './ProgressBar'
 
 const QuestionResult = ({ question, totalVotes }) => {
   const { votes, text, isWinner, isEven } = question || {}
-  console.log(isEven)
-
   const style = () => {
     const green = { background: 'rgba(147 217 77 / 64%)', borderColor: 'rgb(80 115 7 / 84%) !important' }
     const lightGray = { background: '#f2f2f2' }

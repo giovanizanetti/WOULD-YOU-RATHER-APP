@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import DesktopLinks from './DesktopLinks'
 import MobileDrawer from './MobileDrawer'
 import { useScreenSize } from '../../hooks/useScreenSize'
+import MenuIcon from '../../assets/menu-icon.svg'
 
 const NavBar = () => {
   const [showDrawer, setShowDrawer] = useState(false)
@@ -24,7 +25,7 @@ const NavBar = () => {
         {isSmallScreen && isAuthenticated && (
           <img
             onClick={() => setShowDrawer(!showDrawer)}
-            src='./assets/humbuguer icon.svg'
+            src={MenuIcon}
             alt='oprn menu button'
             style={{ margin: '1.5rem', display: 'flex', alignSelf: 'flex-start', width: 30, cursor: 'pointer' }}
           />
