@@ -32,9 +32,10 @@ const QuestionDetails = () => {
   const totalVotes = votesOption1 + votesOption2
   const { name, avatarURL } = useSelector((state) => state.users[author]) || {}
   const headerText = `Asked by ${name}`
+  const headerStyle = { padding: '1rem', fontSize: '1.2rem' }
 
   return (
-    <Card name={name} avatar={avatarURL} headerText={headerText}>
+    <Card name={name} avatar={avatarURL} headerText={headerText} headerStyle={headerStyle}>
       {isUserVote()}
       <div className='question-results-container'>
         <h3>Results:</h3>
