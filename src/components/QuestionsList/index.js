@@ -6,6 +6,7 @@ import { _isEmpty } from '../../utils'
 
 const QuestionsList = ({ activeList }) => {
   const questions = useSelector((state) => state.questions)
+  const { authedUser } = useSelector((state) => state.auth || {})
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -20,13 +21,19 @@ const QuestionsList = ({ activeList }) => {
   const unansweredQuestions =
     questionsIDs &&
     questionsIDs.filter((id) => {
-      return questions[id].optionOne.votes.length === 0 && questions[id].optionTwo.votes.length === 0
+      return (
+        questions[id].optionOne.votes.find((voterID) => voterID === authedUser) === undefined &&
+        questions[id].optionTwo.votes.find((voterID) => voterID === authedUser) === undefined
+      )
     })
 
   const answeredQuestions =
     questionsIDs &&
     questionsIDs.filter((id) => {
-      return questions[id].optionOne.votes.length > 0 || questions[id].optionTwo.votes.length > 0
+      return (
+        questions[id].optionOne.votes.find((voterID) => voterID === authedUser) ||
+        questions[id].optionTwo.votes.find((voterID) => voterID === authedUser)
+      )
     })
 
   // Check with list needs the questions and pass the correct questions
