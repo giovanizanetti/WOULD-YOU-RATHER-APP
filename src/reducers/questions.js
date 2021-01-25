@@ -8,9 +8,10 @@ const questions = (state = {}, action) => {
         ...action.questions,
       }
     case SAVE_QUESTION:
+      console.log(action.question)
       return {
         ...state,
-        ...action.question,
+        [action.question.id]: action.question,
       }
     default:
       return state
