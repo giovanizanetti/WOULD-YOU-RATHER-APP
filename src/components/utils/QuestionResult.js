@@ -1,8 +1,9 @@
 import { _capitalize } from '../../utils'
 import ProgressBar from './ProgressBar'
 
-const QuestionResult = ({ question, totalVotes }) => {
+const QuestionResult = ({ question, totalVotes, isUserVote }) => {
   const { votes, text, isWinner, isEven } = question || {}
+
   const style = () => {
     const green = { background: 'rgba(147 217 77 / 64%)', borderColor: 'rgb(80 115 7 / 84%) !important' }
     const lightGray = { background: '#f2f2f2' }
@@ -17,6 +18,7 @@ const QuestionResult = ({ question, totalVotes }) => {
 
   return (
     <div className='question-result container border-gray pad-1' style={style()}>
+      {isUserVote && <div className='votedBadge'>Your Vote</div>}
       <p>{_capitalize(text) + '?'}</p>
       <ProgressBar progress={progress} />
       <div className='votes'>{votesResults}</div>

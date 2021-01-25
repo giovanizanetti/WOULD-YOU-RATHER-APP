@@ -36,7 +36,7 @@ const QuestionsList = ({ activeList }) => {
       )
     })
 
-  // Check with list needs the questions and pass the correct questions
+  // Check which list needs the questions and pass the correct questions
   const filteredQuestions = activeList === 'answered' ? answeredQuestions : unansweredQuestions
 
   return (

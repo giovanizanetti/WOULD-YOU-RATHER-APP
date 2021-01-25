@@ -255,6 +255,7 @@ p {
   text-align: left;
 }
 .question-result {
+  position: relative;
   margin: 1rem 0 0 0;
   font-weight: 600;
 }
@@ -277,6 +278,20 @@ p {
   background: #099a66;
   height: 1rem;
   border-radius: 4px;
+}
+.votedBadge {
+  padding: 0.2rem;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 3rem;
+  height: 3rem;
+  background: #c5b20b;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  color: #f2f2f2;
+  font-weight: bold;
 }
 @media only screen and (max-width: 920px) {
 }
