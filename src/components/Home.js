@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div
       className='container border-gray questions-container'
-      style={{ overflow: 'hidden', position: 'fixed', maxHeight: '80vh', minHeight: '40vh' }}
+      style={{ overflow: 'hidden', maxHeight: '80vh', minHeight: '40vh' }}
     >
       <nav className='questions-container-nav'>
         <div className={active === answered ? 'questions-active' : undefined} id={answered} onClick={handleClick}>
