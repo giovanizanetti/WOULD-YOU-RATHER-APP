@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { saveQuestion } from '../actions/questions'
+
 import Card from './utils/Card'
 const NewQuestion = () => {
+  const author = useSelector((state) => state.auth.authedUser)
+
   const [optionOneText, setOptionOneText] = useState('')
   const [optionTwoText, setOptionTwoText] = useState('')
+  const dispatch = useDispatch()
 
   const headerText = 'Create a new question'
 
@@ -10,6 +16,7 @@ const NewQuestion = () => {
     e.preventDefault()
     if (!optionOneText.length || !optionTwoText.length) return alert('You must enter a question!')
     console.log('submited', { optionOneText, optionTwoText })
+    dispatch(saveQuestion({ author, optionOneText, optionTwoText }))
     setOptionTwoText('')
     setOptionOneText('')
   }
