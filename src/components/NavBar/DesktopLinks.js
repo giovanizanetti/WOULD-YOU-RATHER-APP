@@ -11,7 +11,7 @@ const DesktopLinks = ({ authedUser }) => {
         </NavLink>
       </li>
       <li>
-        <NavLink to='/newQuestion' className='navItem'>
+        <NavLink to='/add' className='navItem'>
           New Question
         </NavLink>
       </li>

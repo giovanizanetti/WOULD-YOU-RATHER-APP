@@ -31,7 +31,7 @@ const MobileDrawer = ({ show, setShow, authedUser }) => {
             </li>
 
             <li>
-              <NavLink onClick={() => setShow(!show)} to='/newQuestion'>
+              <NavLink onClick={() => setShow(!show)} to='/add'>
                 <div className='mobileLinkContainer'>
                   <div className='mobileNavIcon'></div>
                   <img src={NewQuestionIcon} alt='new question' />

@@ -36,7 +36,7 @@ const App = (props) => {
             {isAuthenticated}
             <LeaderBoard />
           </Route>
-          <Route path='/newQuestion' exact>
+          <Route path='/add' exact>
             {isAuthenticated}
             <NewQuestion />
           </Route>

@@ -307,6 +307,10 @@ center {
   padding: 0.5rem;
   font-size: 1rem;
 }
+.newQuestion button {
+  font-size: 1rem;
+  font-weight: 600;
+}
 .divisor-form {
   padding: 0.5rem;
   display: flex;
