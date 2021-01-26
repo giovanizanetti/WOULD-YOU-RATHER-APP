@@ -21,7 +21,7 @@ const ChooseOption = ({ options: { question1, question2 } }) => {
   return (
     <div>
       <h2>Would you rather ...</h2>
-      <form onSubmit={handleSubmit} className='flex-column optionForm pad-1'>
+      <form onSubmit={handleSubmit} className='flex-column optionForm pad-1' style={{ fontSize: '1.3rem' }}>
         <div className='flex-column'>
           <label className='pad-TB-1_2 '>
             <input

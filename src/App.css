@@ -359,7 +359,7 @@ center {
 
 @media only screen and (max-width: 418px) {
   .optionForm {
-    min-width: 80vw;
+    min-width: 65vw;
     align-items: center;
   }
 
