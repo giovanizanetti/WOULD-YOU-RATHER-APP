@@ -327,7 +327,7 @@ center {
   font-weight: bold;
 }
 .newQuestion {
-  min-width: 50vw;
+  min-width: 30vw;
 }
 .newQuestion input {
   background: #f2f2f2;
