@@ -8,6 +8,7 @@ const NewQuestion = () => {
 
   const [optionOneText, setOptionOneText] = useState('')
   const [optionTwoText, setOptionTwoText] = useState('')
+  const isDisabled = !optionTwoText.length || !optionOneText.length
   const dispatch = useDispatch()
 
   const headerText = 'Create a new question'
@@ -27,6 +28,7 @@ const NewQuestion = () => {
         <h2>Would you rather ...</h2>
         <form onSubmit={handleSubmit} className='flex-column center newQuestion'>
           <input
+            autoFocus
             id='optionOneText'
             placeholder='Enter option one'
             onChange={(e) => setOptionOneText(e.target.value)}
@@ -43,7 +45,9 @@ const NewQuestion = () => {
             onChange={(e) => setOptionTwoText(e.target.value)}
             value={optionTwoText}
           ></input>
-          <button className='btn'>Submit</button>
+          <button disabled={isDisabled} className='btn'>
+            Submit
+          </button>
         </form>
       </div>
     </Card>
