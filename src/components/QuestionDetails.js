@@ -7,12 +7,13 @@ import QuestionResult from './utils/QuestionResult'
 
 const QuestionDetails = () => {
   const { question_id } = useParams()
-  const history = useHistory()
+  // const history = useHistory()
   const { authedUser } = useSelector((state) => state.auth || {})
-  useEffect(() => {
-    authedUser === undefined && history.replace('/signin')
-    console.log(authedUser)
-  }, [authedUser, history])
+
+  // useEffect(() => {
+  //   history.push('/signin')
+  // }, [history])
+
   const { author, optionOne, optionTwo } = useSelector((state) => state.questions[question_id]) || {}
 
   const isUserVote = (option) => (option && option.votes.find((id) => id === authedUser) ? true : false)
