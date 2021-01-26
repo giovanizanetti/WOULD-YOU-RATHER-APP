@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Card from './utils/Card'
 import ChooseOption from './ChooseOption'
@@ -6,9 +7,13 @@ import QuestionResult from './utils/QuestionResult'
 
 const QuestionDetails = () => {
   const { question_id } = useParams()
-  const { author, optionOne, optionTwo } = useSelector((state) => state.questions[question_id]) || {}
-
+  const history = useHistory()
   const { authedUser } = useSelector((state) => state.auth || {})
+  useEffect(() => {
+    authedUser === undefined && history.replace('/signin')
+    console.log(authedUser)
+  }, [authedUser, history])
+  const { author, optionOne, optionTwo } = useSelector((state) => state.questions[question_id]) || {}
 
   const isUserVote = (option) => (option && option.votes.find((id) => id === authedUser) ? true : false)
 
