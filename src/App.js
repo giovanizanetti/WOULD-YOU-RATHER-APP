@@ -16,7 +16,7 @@ const App = (props) => {
     return name
   })
 
-  const isAuthenticated = authedUser === undefined && <Redirect to='/signin' />
+  const isAuthenticated = authedUser !== undefined && true
 
   return (
     <>
@@ -27,21 +27,16 @@ const App = (props) => {
         <div className='App'>
           <Switch>
             <Route path='/' exact>
-              {isAuthenticated}
-              <Home />
+              {isAuthenticated ? <Home /> : <Redirect to='/signin' />}
             </Route>
             <Route path='/questions/:question_id' exact>
-              {isAuthenticated}
-              <QuestionDetails />
+              {isAuthenticated ? <QuestionDetails /> : <Redirect to='/signin' />}
             </Route>
-
             <Route path='/leaderboard' exact>
-              {isAuthenticated}
-              <LeaderBoard />
+              {isAuthenticated ? <LeaderBoard /> : <Redirect to='/signin' />}
             </Route>
             <Route path='/add' exact>
-              {isAuthenticated}
-              <AddQuestion />
+              {isAuthenticated ? <AddQuestion /> : <Redirect to='/signin' />}
             </Route>
             <Route path='/signin' exact>
               <SignIn />
