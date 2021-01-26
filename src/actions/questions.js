@@ -1,6 +1,6 @@
-import { GET_QUESTIONS, SAVE_QUESTION } from './types'
+import { GET_QUESTIONS, SAVE_QUESTION, SAVE_USER_VOTE } from './types'
 import { showLoading, hideLoading } from 'react-redux-loading'
-import { _getQuestions, _saveQuestion } from '../_DATA'
+import { _getQuestions, _saveQuestion, _saveQuestionAnswer } from '../_DATA'
 
 export const getQuestions = () => (dispatch) => {
   dispatch(showLoading())
@@ -16,11 +16,23 @@ export const getQuestions = () => (dispatch) => {
 }
 
 export const saveQuestion = (question) => (dispatch) => {
-  console.log(question)
   dispatch(showLoading())
   return _saveQuestion(question)
     .then((question) => {
       dispatch({ type: SAVE_QUESTION, question })
+      dispatch(hideLoading())
+    })
+    .catch((err) => {
+      console.log(err)
+      dispatch(hideLoading())
+    })
+}
+
+export const saveUserVote = (vote) => (dispatch) => {
+  dispatch(showLoading())
+  return _saveQuestionAnswer(vote)
+    .then((vote) => {
+      dispatch({ type: SAVE_USER_VOTE, vote })
       dispatch(hideLoading())
     })
     .catch((err) => {

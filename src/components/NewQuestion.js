@@ -15,7 +15,6 @@ const NewQuestion = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!optionOneText.length || !optionTwoText.length) return alert('You must enter a question!')
     dispatch(saveQuestion({ author, optionOneText, optionTwoText }))
     setOptionTwoText('')
     setOptionOneText('')

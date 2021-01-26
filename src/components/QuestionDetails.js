@@ -21,6 +21,7 @@ const QuestionDetails = () => {
     text: optionOne.text,
     isWinner: isOption1Winner,
     isEven: votesOption2 === votesOption1,
+    id: question_id,
   }
 
   const question2 = {
@@ -28,6 +29,7 @@ const QuestionDetails = () => {
     text: optionTwo.text,
     isWinner: !isOption1Winner,
     isEven: votesOption2 === votesOption1,
+    id: question_id,
   }
 
   const totalVotes = votesOption1 + votesOption2

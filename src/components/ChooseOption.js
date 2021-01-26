@@ -1,20 +1,30 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { _capitalize } from '../utils'
+import { saveUserVote } from '../actions/questions'
 
-const ChooseOption = ({ options: { question1, question2 } }) => {
-  console.log(question2)
-  // const author = useSelector((state) => state.auth.authedUser)
+const ChooseOption = ({ options }) => {
+  const { question1, question2 } = options
+  console.log(options)
+  const author = useSelector((state) => state.auth.authedUser)
 
   const [choice, setChoice] = useState(undefined)
   const isDisabled = !choice
   const dispatch = useDispatch()
   useEffect(() => console.log(choice, isDisabled), [choice, isDisabled])
 
+  const handleChange = (e) => {
+    const answer = e.target.value
+    const question = answer === 'optionOne' ? question1.id : question2.id
+    setChoice({
+      answer,
+      author,
+      question,
+    })
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!choice) return alert('You must choose an answer!')
-    dispatch()
+    dispatch(saveUserVote(choice))
     setChoice(false)
   }
 
@@ -29,8 +39,8 @@ const ChooseOption = ({ options: { question1, question2 } }) => {
               type='radio'
               id='optionOne'
               name='option'
-              onChange={(e) => setChoice(e.target.value)}
-              value={question1}
+              onChange={handleChange}
+              value='optionOne'
             />
             {_capitalize(question1.text + '?')}
           </label>
@@ -40,8 +50,8 @@ const ChooseOption = ({ options: { question1, question2 } }) => {
               type='radio'
               id='optionTwo'
               name='option'
-              onChange={(e) => setChoice(e.target.value)}
-              value={question2}
+              onChange={handleChange}
+              value='optionTwo'
             />
             {_capitalize(question2.text + '?')}
           </label>
