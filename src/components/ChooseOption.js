@@ -5,8 +5,7 @@ import { saveUserVote } from '../actions/questions'
 
 const ChooseOption = ({ options }) => {
   const { question1, question2 } = options
-  console.log(options)
-  const author = useSelector((state) => state.auth.authedUser)
+  const authedUser = useSelector((state) => state.auth.authedUser)
 
   const [choice, setChoice] = useState(undefined)
   const isDisabled = !choice
@@ -15,11 +14,11 @@ const ChooseOption = ({ options }) => {
 
   const handleChange = (e) => {
     const answer = e.target.value
-    const question = answer === 'optionOne' ? question1.id : question2.id
+    const qid = answer === 'optionOne' ? question1.id : question2.id
     setChoice({
       answer,
-      author,
-      question,
+      authedUser,
+      qid,
     })
   }
   const handleSubmit = (e) => {

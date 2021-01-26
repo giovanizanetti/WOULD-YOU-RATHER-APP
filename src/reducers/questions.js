@@ -1,4 +1,4 @@
-import { GET_QUESTIONS, SAVE_QUESTION } from '../actions/types'
+import { GET_QUESTIONS, SAVE_QUESTION, SAVE_USER_VOTE } from '../actions/types'
 
 const questions = (state = {}, action) => {
   switch (action.type) {
@@ -8,10 +8,14 @@ const questions = (state = {}, action) => {
         ...action.questions,
       }
     case SAVE_QUESTION:
-      console.log(action.question)
       return {
         ...state,
         [action.question.id]: action.question,
+      }
+    case SAVE_USER_VOTE:
+      console.log(action.vote)
+      return {
+        ...state,
       }
     default:
       return state

@@ -31,7 +31,8 @@ export const saveQuestion = (question) => (dispatch) => {
 export const saveUserVote = (vote) => (dispatch) => {
   dispatch(showLoading())
   return _saveQuestionAnswer(vote)
-    .then((vote) => {
+    .then((a) => {
+      console.log(a)
       dispatch({ type: SAVE_USER_VOTE, vote })
       dispatch(hideLoading())
     })
