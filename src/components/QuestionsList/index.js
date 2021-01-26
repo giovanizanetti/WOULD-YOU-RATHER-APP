@@ -38,13 +38,12 @@ const QuestionsList = ({ activeList }) => {
 
   // Check which list needs the questions and pass the correct questions
   const filteredQuestions = activeList === 'answered' ? answeredQuestions : unansweredQuestions
-  const sortedQuestions =
-    filteredQuestions.length && filteredQuestions.sort((a, b) => questions[a].timestamp - questions[b].timestamp)
   // Sort questions with most the recent at the top
-  // const sortedQuestions = filteredQuestions.map(question)
+  const sortedQuestions =
+    filteredQuestions.length && filteredQuestions.sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+
   return (
     <div style={{ overflowY: 'auto', position: 'relative' }}>
-      {console.log(sortedQuestions)}
       {sortedQuestions.length ? (
         sortedQuestions.map((question) => <QuestionListItem key={question} question={questions[question]} />)
       ) : (

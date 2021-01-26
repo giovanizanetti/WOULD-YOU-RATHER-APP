@@ -27,7 +27,7 @@ const App = (props) => {
             {isAuthenticated}
             <Home />
           </Route>
-          <Route path='/questions/:id'>
+          <Route path='/questions/:question_id'>
             {isAuthenticated}
             <QuestionDetails />
           </Route>

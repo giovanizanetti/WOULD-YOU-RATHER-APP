@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Card from './utils/Card'
+import ChooseOption from './ChooseOption'
 import QuestionResult from './utils/QuestionResult'
 
 const QuestionDetails = () => {
-  const { id } = useParams()
-  const { author, optionOne, optionTwo } = useSelector((state) => state.questions[id]) || {}
+  const { question_id } = useParams()
+  const { author, optionOne, optionTwo } = useSelector((state) => state.questions[question_id]) || {}
 
   const { authedUser } = useSelector((state) => state.auth || {})
 
@@ -35,12 +36,15 @@ const QuestionDetails = () => {
 
   return (
     <Card name={name} avatar={avatarURL} headerText={headerText} isLargeHeader={true}>
-      {isUserVote()}
-      <div className='question-results-container'>
-        <h3>Results:</h3>
-        <QuestionResult question={question1} totalVotes={totalVotes} isUserVote={isUserVote(optionOne)} />
-        <QuestionResult question={question2} totalVotes={totalVotes} isUserVote={isUserVote(optionTwo)} />
-      </div>
+      {!isUserVote(optionOne) && !isUserVote(optionTwo) ? (
+        <ChooseOption options={{ question1, question2 }} />
+      ) : (
+        <div className='question-results-container'>
+          <h3>Results:</h3>
+          <QuestionResult question={question1} totalVotes={totalVotes} isUserVote={isUserVote(optionOne)} />
+          <QuestionResult question={question2} totalVotes={totalVotes} isUserVote={isUserVote(optionTwo)} />
+        </div>
+      )}
     </Card>
   )
 }

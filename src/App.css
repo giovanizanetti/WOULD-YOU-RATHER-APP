@@ -18,6 +18,32 @@ p {
   flex-direction: column;
   color: #333333;
 }
+input[type='radio']:after {
+  border-radius: 13px;
+  width: 13px;
+  height: 13px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #f2f2f2;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #333333;
+}
+input[type='radio']:checked:after {
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #333333;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid #c4c4c4;
+}
 
 .App-logo {
   height: 40vmin;
@@ -64,6 +90,9 @@ center {
 }
 .pad-TB-1 {
   padding: 1rem 0;
+}
+.pad-TB-1_2 {
+  padding: 0.5rem 0;
 }
 .pad-1 {
   padding: 1rem;
@@ -322,10 +351,18 @@ center {
 
   border-bottom: 2px solid #aaa5a5;
 }
+.optionForm div {
+  align-items: flex-start;
+}
 @media only screen and (max-width: 920px) {
 }
 
 @media only screen and (max-width: 418px) {
+  .optionForm {
+    min-width: 80vw;
+    align-items: center;
+  }
+
   .newQuestion {
     min-width: 80vw;
   }

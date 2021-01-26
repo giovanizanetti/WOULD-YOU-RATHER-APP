@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveQuestion } from '../actions/questions'
 
@@ -33,7 +33,7 @@ const NewQuestion = () => {
             placeholder='Enter option one'
             onChange={(e) => setOptionOneText(e.target.value)}
             value={optionOneText}
-          ></input>
+          />
           <div className='divisor-form'>
             <div className='line'></div>
             <div style={{ padding: ' 0 .5rem' }}>or</div>
@@ -44,7 +44,7 @@ const NewQuestion = () => {
             placeholder='Enter option two'
             onChange={(e) => setOptionTwoText(e.target.value)}
             value={optionTwoText}
-          ></input>
+          />
           <button disabled={isDisabled} className='btn'>
             Submit
           </button>
