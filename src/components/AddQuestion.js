@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { saveQuestion } from '../actions/questions'
 
 import Card from './utils/Card'
-const NewQuestion = () => {
+const AddQuestion = () => {
   const author = useSelector((state) => state.auth.authedUser)
 
   const [optionOneText, setOptionOneText] = useState('')
@@ -53,4 +53,4 @@ const NewQuestion = () => {
   )
 }
 
-export default NewQuestion
+export default AddQuestion

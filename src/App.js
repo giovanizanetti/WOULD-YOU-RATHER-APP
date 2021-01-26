@@ -6,7 +6,7 @@ import LoadingBar from 'react-redux-loading'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import LeaderBoard from './components/LeaderBoard'
-import NewQuestion from './components/NewQuestion'
+import AddQuestion from './components/AddQuestion'
 import QuestionDetails from './components/QuestionDetails'
 
 const App = (props) => {
@@ -38,7 +38,7 @@ const App = (props) => {
           </Route>
           <Route path='/add' exact>
             {isAuthenticated}
-            <NewQuestion />
+            <AddQuestion />
           </Route>
           <Route path='/signin' exact>
             <SignIn />
