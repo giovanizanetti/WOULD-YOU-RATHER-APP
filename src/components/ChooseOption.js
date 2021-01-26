@@ -23,8 +23,9 @@ const ChooseOption = ({ options }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(choice)
     dispatch(saveUserVote(choice))
-    setChoice(false)
+    setChoice(undefined)
   }
 
   return (

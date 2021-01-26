@@ -13,9 +13,13 @@ const questions = (state = {}, action) => {
         [action.question.id]: action.question,
       }
     case SAVE_USER_VOTE:
-      console.log(action.vote)
+      const { qid, authedUser, answer } = action.vote || {}
+      // create copy to deep change its props adding autherUser id as a vote
+      const updatedQuestion = { ...state[qid] }
+      updatedQuestion[answer].votes.push(authedUser)
       return {
         ...state,
+        [qid]: updatedQuestion,
       }
     default:
       return state
