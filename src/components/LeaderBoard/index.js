@@ -3,19 +3,10 @@ import { useSelector } from 'react-redux'
 const LeaderBoard = () => {
   const users = useSelector((state) => state.users)
 
+  //transform users obj in an array of ids
   const usersIds = Object.keys(users)
-  // const sortedUsers = usersIds
-  //   .map((id, index) => {
-  //     const answers = Object.keys(users[id].answers).length
-  //     const questions = users[id].questions.length
-  //     const total = answers + questions
-  //     return { id, total }
-  //   })
-  //   .sort((a, b) => {
-  //     return b.total - a.total
-  //   })
-  //   .map((item) => users[item.id])
 
+  // sort user leader (descending)
   const sortedUsers = usersIds
     .sort((a, b) => {
       const answersA = Object.keys(users[a].answers).length

@@ -1,6 +1,6 @@
-import tylermcginnisAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avata-m-1.svg'
-import sarahedoAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avatar-f-1.svg'
-import johndoeAvatar from '/Users/giovanizanetti/Projects/would-you-rather-app/src/assets/avatar-m-2.svg'
+import tylermcginnisAvatar from './assets/avata-m-1.svg'
+import sarahedoAvatar from './assets/avatar-f-1.svg'
+import johndoeAvatar from './assets/avatar-m-2.svg'
 
 let users = {
   sarahedo: {
