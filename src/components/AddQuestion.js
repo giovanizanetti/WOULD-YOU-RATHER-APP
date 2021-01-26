@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { saveQuestion } from '../actions/questions'
 
 import Card from './utils/Card'
 const AddQuestion = () => {
   const author = useSelector((state) => state.auth.authedUser)
+  const history = useHistory()
 
   const [optionOneText, setOptionOneText] = useState('')
   const [optionTwoText, setOptionTwoText] = useState('')
@@ -18,6 +20,7 @@ const AddQuestion = () => {
     dispatch(saveQuestion({ author, optionOneText, optionTwoText }))
     setOptionTwoText('')
     setOptionOneText('')
+    setTimeout(() => history.push('/'), 500)
   }
 
   return (
