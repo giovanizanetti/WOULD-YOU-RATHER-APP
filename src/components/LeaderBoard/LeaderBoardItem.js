@@ -9,7 +9,6 @@ const LeaderboardItem = ({ user }) => {
   return (
     <div className='leaderboardItem container flex-row border-gray'>
       <TrophyBadge position={position} />
-
       {!isSmallScreen && (
         <div style={{ margin: '0 1rem 0 0' }}>
           <img className='pad-TB-1' style={{ width: '6rem' }} src={avatar} alt={`${name}'s avatar`} />

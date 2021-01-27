@@ -10,7 +10,6 @@ const ChooseOption = ({ options }) => {
   const [choice, setChoice] = useState(undefined)
   const isDisabled = !choice
   const dispatch = useDispatch()
-  useEffect(() => console.log(choice, isDisabled), [choice, isDisabled])
 
   const handleChange = (e) => {
     const answer = e.target.value
@@ -23,7 +22,6 @@ const ChooseOption = ({ options }) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(choice)
     dispatch(saveUserVote(choice))
     setChoice(undefined)
   }

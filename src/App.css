@@ -452,7 +452,7 @@ center {
     min-height: 100% !important;
   }
   .question-card-outer {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
   }
   .question-card-inner {
