@@ -203,8 +203,6 @@ center {
   background: #4285f4;
   opacity: 0.9;
 }
-.mobileDrawer ul li:hover a {
-}
 .mobileLinkContainer {
   display: flex;
   align-items: center;
@@ -373,7 +371,7 @@ center {
   min-width: 110%;
   padding: 1rem 0 1rem 1rem;
 }
-.leaderboardItem .trofe-badge {
+.leaderboardItem .trophy-badge {
   width: 0;
   height: 0;
   border-top: 4rem solid #a8a6a6;
@@ -388,6 +386,9 @@ center {
   min-width: 50%;
   border-left: 2px solid;
   border-right: 2px solid;
+}
+.leaderboardItem .lb-main h2 {
+  margin-top: 0;
 }
 .leaderboardItem .lb-main .leaderResult {
   display: flex;
@@ -421,8 +422,16 @@ center {
     width: 90%;
     order: 3;
   }
+  .leaderboardItem .lb-main h2 {
+    text-align: center;
+    margin: 1rem 0 1.5rem 0;
+  }
   #score-mobile div {
     min-width: none;
+  }
+  .leaderboardItem .trophy-badge {
+    border-top: 5rem solid #a8a6a6;
+    border-right: 5rem solid transparent;
   }
 }
 
