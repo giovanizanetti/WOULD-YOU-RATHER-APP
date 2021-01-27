@@ -1,5 +1,5 @@
 // import Avatar from '../assets/avatar-f-1.svg'
-const Card = ({ name, avatar, children, headerText, isLargeHeader }) => {
+const Card = ({ name, avatar, children, headerText, isLargeHeader, headerPosition = { textAlign: 'center' } }) => {
   const largeHeaderStyle = { padding: '1rem', fontSize: '1.2rem' }
 
   return (

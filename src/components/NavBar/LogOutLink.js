@@ -6,7 +6,7 @@ import LogoutIcon from '../../assets/Logout.svg'
 
 const LogOutLink = ({ setShow }) => {
   const dispatch = useDispatch()
-  const [isSmallScreen] = useScreenSize()
+  const [isSmallScreen] = useScreenSize(920)
   const handleClick = () => {
     dispatch(logoutUser())
     setShow && setShow(false)

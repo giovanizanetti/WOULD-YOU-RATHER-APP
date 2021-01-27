@@ -7,7 +7,7 @@ import MenuIcon from '../../assets/menu-icon.svg'
 
 const NavBar = () => {
   const [showDrawer, setShowDrawer] = useState(false)
-  const [isSmallScreen] = useScreenSize()
+  const [isSmallScreen] = useScreenSize(920)
 
   const authedUser = useSelector((state) => {
     const { name, avatarURL } = state.users[state.auth.authedUser] || {}

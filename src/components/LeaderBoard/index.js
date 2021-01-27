@@ -23,20 +23,21 @@ const LeaderBoard = () => {
   })
 
   return (
-    <>
+    <div className='flex-column' style={{ alignItems: 'center' }}>
       {sortedUsersByScore &&
-        sortedUsersByScore.map((id) => {
-          const userID = users[id].id
+        sortedUsersByScore.map((id, index) => {
           const formatedUser = {
             id,
-            answers: calculateAnswers(users, userID),
-            score: calculateScore(users, userID),
+            answers: calculateAnswers(users, id),
+            score: calculateScore(users, id),
             avatar: users[id].avatarURL,
-            questions: users[userID].questions.length,
+            questions: users[id].questions.length,
+            position: index + 1,
+            name: users[id].name,
           }
-          return <LeaderboardItem key={userID} user={formatedUser} />
+          return <LeaderboardItem key={id} user={formatedUser} />
         })}
-    </>
+    </div>
   )
 }
 
