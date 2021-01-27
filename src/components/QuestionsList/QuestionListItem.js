@@ -21,7 +21,7 @@ const QuestionListItem = ({ question }) => {
 
   return (
     <Card name={_capitalize(name)} avatar={avatarURL} headerText={headerText}>
-      <div>
+      <div className='listItem-container'>
         <h3>Would You Rather?</h3>
         <span>{_truncate(_capitalize(text), 10)}</span>
         <button className='btn btn-transparent' onClick={handleClick}>

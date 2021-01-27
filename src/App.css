@@ -354,6 +354,13 @@ center {
 .optionForm div {
   align-items: flex-start;
 }
+.listItem-container {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+}
 @media only screen and (max-width: 920px) {
 }
 

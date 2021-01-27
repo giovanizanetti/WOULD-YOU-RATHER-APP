@@ -7,6 +7,7 @@ import { _isEmpty } from '../../utils'
 const QuestionsList = ({ activeList }) => {
   const questions = useSelector((state) => state.questions)
   const { authedUser } = useSelector((state) => state.auth || {})
+  const isLoading = useSelector((state) => (state.loadingBar.default === 1 ? true : false))
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -44,11 +45,12 @@ const QuestionsList = ({ activeList }) => {
 
   return (
     <div style={{ overflowY: 'auto', position: 'relative' }}>
-      {sortedQuestions.length ? (
-        sortedQuestions.map((question) => <QuestionListItem key={question} question={questions[question]} />)
-      ) : (
+      {!isLoading && !sortedQuestions.length && (
         <strong className='flex-column noQuestion-msg'>There are no {activeList} questions</strong>
       )}
+      {isLoading && !sortedQuestions.length && <strong className='flex-column noQuestion-msg'>loading...</strong>}
+      {sortedQuestions.length &&
+        sortedQuestions.map((question) => <QuestionListItem key={question} question={questions[question]} />)}
     </div>
   )
 }
