@@ -1,4 +1,4 @@
-import { GET_USERS, SAVE_USER_VOTE } from '../actions/types'
+import { GET_USERS, SAVE_USER_VOTE, SAVE_QUESTION } from '../actions/types'
 
 const users = (state = {}, action) => {
   switch (action.type) {
@@ -15,6 +15,14 @@ const users = (state = {}, action) => {
       return {
         ...state,
         [authedUser]: { ...state[authedUser], answers },
+      }
+    case SAVE_QUESTION:
+      const { id, author } = action.question
+      // copy users questions and append new question id
+      const questions = [...state[author].questions, id]
+      return {
+        ...state,
+        [author]: { ...state[author], questions },
       }
     default:
       return state
