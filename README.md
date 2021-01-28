@@ -95,7 +95,6 @@ This project was scaffolded using the create-react-app cli. For more instruction
 - Does the code run without errors? Is the code free of warnings that resulted from not following the best practices listed in the documentation, such as using key for list items? Is the code formatted properly?
   - The code runs without errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using key for list items. All code is functional and formatted properly.
 
-For detailed instructions check out my [Trello board for this project](https://trello.com/b/qaWIs7Ja/my-reads-app)
 
 ## Features
 
