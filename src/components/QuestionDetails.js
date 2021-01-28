@@ -1,4 +1,4 @@
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Card from './utils/Card'
 import ChooseOption from './ChooseOption'
@@ -37,17 +37,23 @@ const QuestionDetails = () => {
   const headerText = `Asked by ${name}`
 
   return (
-    <Card name={name} avatar={avatarURL} headerText={headerText} isLargeHeader={true}>
-      {!isUserVote(optionOne) && !isUserVote(optionTwo) ? (
-        <ChooseOption options={{ question1, question2 }} />
-      ) : (
-        <div className='question-results-container'>
-          <h3>Results:</h3>
-          <QuestionResult question={question1} totalVotes={totalVotes} isUserVote={isUserVote(optionOne)} />
-          <QuestionResult question={question2} totalVotes={totalVotes} isUserVote={isUserVote(optionTwo)} />
-        </div>
-      )}
-    </Card>
+    <>
+      <Card name={name} avatar={avatarURL} headerText={headerText} isLargeHeader={true}>
+        {!isUserVote(optionOne) && !isUserVote(optionTwo) ? (
+          <ChooseOption options={{ question1, question2 }} />
+        ) : (
+          <div className='question-results-container'>
+            <h3>Results:</h3>
+            <QuestionResult question={question1} totalVotes={totalVotes} isUserVote={isUserVote(optionOne)} />
+            <QuestionResult question={question2} totalVotes={totalVotes} isUserVote={isUserVote(optionTwo)} />
+          </div>
+        )}
+      </Card>
+
+      <Link to='/'>
+        <button className='btn'>Back to all polls</button>
+      </Link>
+    </>
   )
 }
 

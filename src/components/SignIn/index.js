@@ -25,6 +25,7 @@ const SignIn = () => {
       label: (
         <div
           style={{
+            // marginTop: '-4rem',
             display: 'flex',
             alignItems: 'center',
             fontSize: '1.5rem',
@@ -50,7 +51,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className='container' style={{ maxWidth: 400 }}>
+      <div className='container' style={{ maxWidth: 400, marginTop: '-4rem' }}>
         <div className='container-header'>
           <h3 style={{ margin: 0, marginBottom: '.2rem' }}>Welcome to the Would You Rather Game</h3>
           <span style={{ marginTop: '.2rem' }}>Please sign in to continue</span>

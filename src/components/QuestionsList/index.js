@@ -48,7 +48,7 @@ const QuestionsList = ({ activeList }) => {
       {!isLoading && !sortedQuestions.length && (
         <strong className='flex-column noQuestion-msg'>There are no {activeList} questions</strong>
       )}
-      {isLoading && !sortedQuestions.length && <strong className='flex-column noQuestion-msg'>loading...</strong>}
+      {/* {isLoading && !sortedQuestions.length && <strong className='flex-column noQuestion-msg'>loading...</strong>} */}
       {sortedQuestions.length &&
         sortedQuestions.map((question) => <QuestionListItem key={question} question={questions[question]} />)}
     </div>
